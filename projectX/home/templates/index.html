@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block start %}
+    <h1>Hallo Ich bin Adith.</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores incidunt dolor dolorum eum voluptatem. Perferendis reprehenderit, recusandae tempore, distinctio nisi ipsam atque in officiis voluptatem quasi commodi, voluptas laudantium. Cupiditate!</p>
+    <h1 style="text-align: center;">Peoples</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>No.</th>
+                <th>Can Vote</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for person in peoples %}
+                <tr>
+                    <td>{{ forloop.counter}}</td>
+                    <td>{{ person.name }}</td>
+                    <td>{{ person.age }}</td>
+                    <td>
+                        {% if person.age >= 18 %}
+                        👍
+                        {% else %}
+                        👎
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/contact/" class="button">Contact Us</a>
+    <a href="/about/" class="button">About Us</a>
+
+{% endblock %}

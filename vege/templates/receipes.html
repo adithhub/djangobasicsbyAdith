@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block start %}
+
+    <div class="container mt-5">
+        <h2 class="text-center">Add a New Recipe</h2>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- Recipe Name -->
+            <div class="form-group">
+                <label for="recipeName">Recipe Name</label>
+                <input type="text" class="form-control" id="recipeName" name="receipe_name" placeholder="Enter Recipe Name" required>
+            </div>
+
+            <!-- Recipe Description -->
+            <div class="form-group">
+                <label for="recipeDescription">Description</label>
+                <textarea class="form-control" id="recipeDescription" name="receipe_description" rows="4" placeholder="Enter Recipe Description" required></textarea>
+            </div>
+
+            <!-- Recipe Image -->
+            <div class="form-group">
+                <label for="recipeImage">Upload Image</label>
+                <input type="file" class="form-control-file" id="recipeImage" name="receipe_image" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-success btn-block">Add Recipe</button>
+        </form>
+    </div>
+
+{% endblock %}
